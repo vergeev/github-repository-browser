@@ -41,26 +41,6 @@ user_detail_view = UserDetailView.as_view()
 # Fetching Github info takes too long, better cache the response
 user_detail_view = cache_page(settings.USER_INFO_CACHE_TIME)(user_detail_view)
 
-class UserUpdateView(LoginRequiredMixin, UpdateView):
-
-    model = User
-    fields = ["name"]
-
-    def get_success_url(self):
-        return reverse("users:detail", kwargs={"username": self.request.user.username})
-
-    def get_object(self):
-        return User.objects.get(username=self.request.user.username)
-
-    def form_valid(self, form):
-        messages.add_message(
-            self.request, messages.INFO, _("Infos successfully updated")
-        )
-        return super().form_valid(form)
-
-
-user_update_view = UserUpdateView.as_view()
-
 
 class UserRedirectView(LoginRequiredMixin, RedirectView):
 
