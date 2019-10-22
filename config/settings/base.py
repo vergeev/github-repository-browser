@@ -263,4 +263,3 @@ SOCIALACCOUNT_ADAPTER = "github_repository_browser.users.adapters.SocialAccountA
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-USER_INFO_CACHE_TIME = 60 * 15

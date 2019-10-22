@@ -58,8 +58,6 @@ class UserDetailView(UserPassesTestMixin, LoginRequiredMixin, DetailView):
 
 
 user_detail_view = UserDetailView.as_view()
-# Fetching Github info takes too long, better cache the response
-user_detail_view = cache_page(settings.USER_INFO_CACHE_TIME)(user_detail_view)
 
 
 class UserRedirectView(LoginRequiredMixin, RedirectView):
