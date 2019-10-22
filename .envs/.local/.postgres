@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=github_repository_browser
+POSTGRES_USER=QnEsFttIJSSLMmRtdkThCJdayDiJafCd
+POSTGRES_PASSWORD=w1NXfrVneEHc3LG9VeXWw3A38HYoadOLTJd2jcKAwJuHNwgif8tEUkKZjlp8WyvE

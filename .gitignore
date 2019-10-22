@@ -274,4 +274,4 @@ github_repository_browser/media/
 
 .ipython/
 .env
-.envs/*
+.envs/.production/*
