@@ -8,17 +8,19 @@
 
   <div class="row">
     <div class="col-sm-12">
-
-      <h1>User profile ({{ object.username }})</h1>
-      {% if object.name %}
-        <p>{{ object.name }}</p>
-      {% endif %}
-      <p>Github username: {{ github_username }}</p>
-      <img src="{{ github_avatar_url }}" alt="Github Avatar">
-      <p>List of repositories</p>
-      <ul>
+      <h1>User Profile</h1>
+    </div>
+    <div class="col-md-5">
+      <p>Github Username: <strong>{{ github_username }}</strong></p>
+      <figure class="figure">
+        <img src="{{ github_avatar_url }}" class="figure-img img-fluid rounded" width="400" height="400" alt="Github avatar for {{ github_username }}.">
+      </figure>
+    </div>
+    <div class="col-md-6">
+      <p>Repositories</p>
+      <ul class="list-group" style="max-height: 400px; overflow: scroll;">
         {% for repo in github_repositories %}
-          <li>
+          <li class="list-group-item">
             <a href="{{ repo.url }}" target=_blank>{{ repo.name }}</a>
           </li>
         {% endfor %}
