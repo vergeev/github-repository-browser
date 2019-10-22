@@ -23,7 +23,16 @@
 
     <!-- Your stuff: Third-party CSS libraries go here -->
 
-    <!-- This file stores project-specific CSS -->
+    <!-- Sticky footer https://getbootstrap.com/docs/4.0/examples/sticky-footer/ -->
+    <style>
+      .footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 60px;
+          line-height: 60px;
+      }
+    </style>
 
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
 
@@ -77,6 +86,12 @@
       {% endblock content %}
 
     </div> <!-- /container -->
+
+    <footer class="footer bg-light">
+      <div class="container">
+        <span class="text-muted">Created by <a href="https://github.com/vergeev" target=_blank>Pavel</a>, source code: <a href="https://github.com/vergeev/github-repository-browser" target=_blank>Github</a>.</span>
+      </div>
+    </footer>
 
     {% block modal %}{% endblock modal %}
 
