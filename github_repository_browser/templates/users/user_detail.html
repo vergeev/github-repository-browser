@@ -9,10 +9,20 @@
   <div class="row">
     <div class="col-sm-12">
 
-      <h2>{{ object.username }}</h2>
+      <h1>User profile ({{ object.username }})</h1>
       {% if object.name %}
         <p>{{ object.name }}</p>
       {% endif %}
+      <p>Github username: {{ github_username }}</p>
+      <img src="{{ github_avatar_url }}" alt="Github Avatar">
+      <p>List of repositories</p>
+      <ul>
+        {% for repo in github_repositories %}
+          <li>
+            <a href="{{ repo.url }}" target=_blank>{{ repo.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 
