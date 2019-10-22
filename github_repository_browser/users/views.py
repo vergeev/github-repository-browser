@@ -31,7 +31,7 @@ class UserDetailView(LoginRequiredMixin, DetailView):
                 'name': repo.full_name,
                 'url': repo.html_url,
             }
-            for repo in github_client.get_user().get_repos()
+            for repo in github_user.get_repos()
         ]
 
         return context
