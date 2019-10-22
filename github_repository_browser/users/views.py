@@ -7,6 +7,10 @@ from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from django.http import Http404
+from django.contrib import messages
+from django.contrib.auth import logout
+from django.utils.timezone import now
+
 
 from github import Github
 
@@ -20,15 +24,26 @@ class UserDetailView(UserPassesTestMixin, LoginRequiredMixin, DetailView):
     slug_url_kwarg = "username"
 
     def test_func(self):
-        if not self.request.user.is_superuser:
-            if self.request.user.username != self.kwargs['username']:
-                raise Http404()
+        if self.request.user.is_superuser:
+            return True
+
+        if self.request.user.username != self.kwargs['username']:
+            raise Http404()
+
+        github_token = self.get_object().github_token
+        if github_token.expires_at and github_token.expires_at < now():
+            messages.add_message(
+                self.request, messages.ERROR, 'Your Github token has expired. Please log in again.')
+            logout(self.request)
+            return False
+
         return True
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        github_client = Github(self.get_object().github_token)
+        github_token = self.object.github_token
+        github_client = Github(github_token.token)
         github_user = github_client.get_user()
 
         context['github_username'] = github_user.login

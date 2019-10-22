@@ -3,6 +3,8 @@ from django.db.models import CharField
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
+from allauth.socialaccount.models import SocialToken
+
 
 class User(AbstractUser):
 
@@ -14,12 +16,13 @@ class User(AbstractUser):
         return reverse("users:detail", kwargs={"username": self.username})
 
     @property
-    def github_token(self) -> str:
+    def github_token(self) -> SocialToken:
         """Fetches Github token in the assumption that there's only one social app"""
         account = self.socialaccount_set.filter(provider="github").first()
         if not account:
             raise AssertionError("User has no associated Github account. Did not login with Github?")
+        # Here, we assume that there's only one social app
         token_obj = account.socialtoken_set.first()
         if not token_obj:
             raise AssertionError("User has no Github token. Did not login with Github?")
-        return token_obj.token
+        return token_obj
