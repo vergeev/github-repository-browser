@@ -1,18 +1,23 @@
 Github Repository Browser
 =========================
 
-Test assignment for `wemake_services job`_. `Live version`_.
+Test assignment for `wemake_services job`_.
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
      :alt: Built with Cookiecutter Django
 
 .. _`wemake_services job`: https://wemake.services/meta/rsdp/job-application/
-.. _`Live version`: https://sleepy-peak-25500.herokuapp.com
-
 
 :License: MIT
 
+
+Live version
+------------
+
+`Live version`_.
+
+.. _`Live version`: https://sleepy-peak-25500.herokuapp.com
 
 Settings
 --------
