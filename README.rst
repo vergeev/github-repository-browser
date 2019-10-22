@@ -17,6 +17,7 @@ Live version
 ------------
 
 .. image:: https://user-images.githubusercontent.com/13587415/67280090-0a540280-f4d5-11e9-8e9d-8b5e734aa254.png
+    :target: https://sleepy-peak-25500.herokuapp.com/
 
 `Live version`_.
 
