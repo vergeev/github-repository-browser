@@ -6,6 +6,9 @@ Test assignment for `wemake_services job`_.
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
      :alt: Built with Cookiecutter Django
+.. image:: https://travis-ci.org/vergeev/github-repository-browser.svg?branch=master
+    :target: https://travis-ci.org/vergeev/github-repository-browser
+    :alt: Build status for master branch
 
 .. _`wemake_services job`: https://wemake.services/meta/rsdp/job-application/
 
