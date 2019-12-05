@@ -1,10 +1,8 @@
-from django.views.decorators.cache import cache_page
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse
 from django.views.generic import DetailView, RedirectView
 from django.contrib import messages
-from django.conf import settings
 from django.http import Http404
 from django.contrib.auth import logout
 from django.utils.timezone import now
